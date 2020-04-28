@@ -1,0 +1,33 @@
+# ls
+alias ls='ls --color=auto'
+alias la='ls -Al'
+alias det='ls -Alhsb'
+
+# clear
+alias cls='clear'
+
+# cd
+alias ..='cd ..'
+
+# mkdir
+function mkdircd() {
+	mkdir -p "$1" && cd "$1"
+}
+
+# tar and untar
+function tarr() { tar -xvf "$1"; }
+function untarr() { tar -zxvf "$1"; }
+
+# pacman
+alias pacman='sudo pacman'
+
+# open new term in given path (for xfce4-terminal)
+function termhere() {
+    echo "$#"
+    if [ "$#" -eq 0 ]; then
+        xfce4-terminal --working-directory "$(pwd)"
+    else
+        xfce4-terminal --working-directory "$(pwd)/$1"
+    fi
+}
+
