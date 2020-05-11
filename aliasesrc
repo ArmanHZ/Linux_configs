@@ -23,11 +23,17 @@ alias pacman='sudo pacman'
 
 # open new term in given path (for xfce4-terminal)
 function termhere() {
-    echo "$#"
     if [ "$#" -eq 0 ]; then
-        xfce4-terminal --working-directory "$(pwd)"
+        xfce4-terminal --working-directory "$(pwd)" &
     else
-        xfce4-terminal --working-directory "$(pwd)/$1"
+        xfce4-terminal --working-directory "$(pwd)/$1" &
     fi
+}
+
+# Use nvim instead of vim
+alias vim='nvim'
+
+function appendToTop() {
+    cp "$1" _temp_ && echo -e "$2" > "$1" && cat _temp_ >> "$1" && rm -rf _temp_
 }
 
