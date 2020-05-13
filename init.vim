@@ -8,13 +8,7 @@
 call plug#begin('~/.config/nvim/Nvim_plugins/')
 	Plug 'itchyny/lightline.vim'
 	Plug 'preservim/nerdtree'
-	Plug 'wadackel/vim-dogrun'
-	Plug 'artanikin/vim-synthwave84'
-	Plug 'danilo-augusto/vim-afterglow'
-	Plug 'rakr/vim-one'
 	Plug 'ycm-core/YouCompleteMe'
-    Plug 'sonph/onehalf', {'rtp': 'vim/'}
-    Plug 'joshdick/onedark.vim'
     Plug 'morhetz/gruvbox'
 call plug#end()
 
@@ -47,4 +41,18 @@ let g:lightline = {
 set noshowmode
 
 hi Normal guibg=NONE ctermbg=NONE
+
+
+" Easier split movement.
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Resize the splits using nums.
+nmap 7 :vertical res+2<CR>
+nmap 8 :res-2<CR>
+nmap 9 :res+2<CR>
+nmap 0 :vertical res-2<CR>
+
 
