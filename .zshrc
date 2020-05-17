@@ -8,7 +8,8 @@
 autoload -U colors && colors
 [[ "$TERM" == "xterm" ]] && export TERM=xterm-256color
 
-PS1=%{$(tput setaf 208)%}"["%{$(tput setaf 223)%}%n%{$(tput setaf 124)%}%{$(tput bold)%}"@"%{$(tput sgr0)%}%{$(tput setaf 106)%}%m" "%{$(tput setaf 214)%}%~%{$(tput setaf 208)%}"]"%{$(tput setaf 130)%}"$ "%{$reset_color%}
+PS1=%{$(tput setaf 208)%}"["%{$(tput setaf 223)%}%n%{$(tput setaf 124)%}%{$(tput bold)%}"@"%{$(tput sgr0)%}%{$(tput setaf 106)%}%m" "%{$(tput setaf 214)%}%~%{$(tput setaf 208)%}"]"%{$(tput setaf 130)%}"
+$ "%{$reset_color%}
 
 # Basic auto/tab complete:
 zstyle ':completion:*' menu select
