@@ -49,9 +49,12 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Ctrl+Arrow keys to resize splits.
-nnoremap <C-UP>     :res+2<CR>
-nnoremap <C-LEFT>   :vertical res+2<CR>
-nnoremap <C-RIGHT>  :vertical res-2<CR>
-nnoremap <C-DOWN>   :res-2<CR>
+" Shift+Arrow keys to resize splits.
+nnoremap <S-UP>     :res+2<CR>
+nnoremap <S-LEFT>   :vertical res+2<CR>
+nnoremap <S-RIGHT>  :vertical res-2<CR>
+nnoremap <S-DOWN>   :res-2<CR>
+
+" Ctrl+n to open NERDTree.
+nnoremap <C-N>      :NERDTree<CR>
 
