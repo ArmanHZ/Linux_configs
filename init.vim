@@ -49,10 +49,9 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Resize the splits using nums.
-nmap 7 :vertical res+2<CR>
-nmap 8 :res-2<CR>
-nmap 9 :res+2<CR>
-nmap 0 :vertical res-2<CR>
-
+" Ctrl+Arrow keys to resize splits.
+nnoremap <C-UP>     :res+2<CR>
+nnoremap <C-LEFT>   :vertical res+2<CR>
+nnoremap <C-RIGHT>  :vertical res-2<CR>
+nnoremap <C-DOWN>   :res-2<CR>
 
