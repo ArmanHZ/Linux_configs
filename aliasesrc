@@ -38,3 +38,11 @@ function appendToTop() {
     cp "$1" _temp_ && echo -e "$2" > "$1" && cat _temp_ >> "$1" && rm -rf _temp_
 }
 
+function sea() {
+    fzf | xargs -r nvim
+}
+
+function se() {
+    find . -maxdepth 1 -not -type d | awk '{ print substr($1, 3) }' | fzf | xargs -r nvim
+}
+
