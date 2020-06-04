@@ -6,7 +6,7 @@
 #
 
 autoload -U colors && colors
-[[ "$TERM" == "xterm" ]] && export TERM=xterm-256color
+# [[ "$TERM" == "xterm" ]] && export TERM=xterm-256color
 
 PS1=%{$(tput setaf 208)%}"["%{$(tput setaf 223)%}%n%{$(tput setaf 124)%}%{$(tput bold)%}"@"%{$(tput sgr0)%}%{$(tput setaf 106)%}%m" "%{$(tput setaf 214)%}%~%{$(tput setaf 208)%}"]"%{$(tput setaf 130)%}"
 $ "%{$reset_color%}
@@ -23,7 +23,7 @@ _comp_options+=(globdots)
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # Load aliases
-source $HOME/.config/Scripts/zsh_aliases/aliasesrc
+source $HOME/.config/Scripts/aliasesrc
 
 autoload -Uz promptinit
 promptinit
@@ -33,5 +33,5 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
 # Syntax highlighting plugin
-source ~/.config/Zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
