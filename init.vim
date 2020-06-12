@@ -8,9 +8,9 @@
 call plug#begin('~/.config/nvim/Nvim_plugins/')
 	Plug 'itchyny/lightline.vim'
 	Plug 'preservim/nerdtree'
-	Plug 'ycm-core/YouCompleteMe'
+"	Plug 'ycm-core/YouCompleteMe'
     Plug 'morhetz/gruvbox'
-"   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 let &shell='/bin/zsh -i'
@@ -32,6 +32,7 @@ set shiftwidth=4
 set expandtab
 
 syntax on
+set mouse=a
 set t_Co=256
 
 let g:gruvbox_contrast_dark="hard"
@@ -62,4 +63,6 @@ nnoremap <C-N>      :NERDTree<CR>
 
 " Ctrl+y to copy to clipboard.
 noremap <C-Y> "+y
+
+source $HOME/.config/nvim/coc_config.vim
 

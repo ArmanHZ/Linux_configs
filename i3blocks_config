@@ -1,0 +1,14 @@
+[storage]
+label=💾 
+command=df -h | awk 'NR == 4 { printf("Size:%s  Used:%s  Avail:%s\n", $2, $3, $4) }'
+interval=60
+
+[weather]
+command=curl "https://wttr.in/Istanbul?format="%l:+%c+%t+%h+%w+%m"" | xargs echo
+interval=3600
+
+[time]
+label=⏳ 
+command=date +"%a %d/%m/%y %T"
+interval=1
+
