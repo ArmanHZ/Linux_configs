@@ -21,12 +21,12 @@ function untarr() { tar -zxvf "$1"; }
 # pacman
 alias pacman='sudo pacman'
 
-# open new term in given path (for xfce4-terminal)
+# open new term in given path (for urxvt)
 function termhere() {
     if [ "$#" -eq 0 ]; then
-        xfce4-terminal --working-directory "$(pwd)" &
+        urxvt -cd "$(pwd)" &
     else
-        xfce4-terminal --working-directory "$(pwd)/$1" &
+        urxvt -cd "$(pwd)/$1" &
     fi
 }
 
