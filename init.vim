@@ -5,12 +5,13 @@
 "    \_/  |_|_| |_| |_|_|  \___|
 "
 
-call plug#begin('~/.config/nvim/Nvim_plugins/')
-	Plug 'itchyny/lightline.vim'
-	Plug 'preservim/nerdtree'
-"	Plug 'ycm-core/YouCompleteMe'
+call plug#begin('~/.config/nvim/nvim_plugins/')
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'preservim/nerdtree'
+    Plug 'ycm-core/YouCompleteMe'
     Plug 'morhetz/gruvbox'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 let &shell='/bin/zsh -i'
@@ -35,34 +36,23 @@ syntax on
 set mouse=a
 set t_Co=256
 
-let g:gruvbox_contrast_dark="hard"
+let g:gruvbox_contrast_dark='hard'
+
+let g:airline_powerline_fonts = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='base16'
+
 colorscheme gruvbox
 set background=dark
 
-let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-      \ }
 set noshowmode
 
 hi Normal guibg=NONE ctermbg=NONE
 
-" Easier split movement.
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-" Shift+Vim keys to resize splits.
-nnoremap <S-J>  :res-2<CR>
-nnoremap <S-H>  :vertical res+2<CR>
-nnoremap <S-L>  :vertical res-2<CR>
-nnoremap <S-K>  :res+2<CR>
-
 " Ctrl+n to open NERDTree.
 nnoremap <C-N>      :NERDTree<CR>
 
-" Ctrl+y to copy to clipboard.
-noremap <C-Y> "+y
+set clipboard+=unnamedplus
 
-source $HOME/.config/nvim/coc_config.vim
+" source $HOME/.config/nvim/coc_config.vim
 

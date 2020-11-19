@@ -18,17 +18,17 @@ function mkdircd() {
 function tarr() { tar -xvf "$1"; }
 function untarr() { tar -zxvf "$1"; }
 
-# pacman
-alias pacman='sudo pacman'
+# tmux with config file specified
+alias tmux='tmux -f $HOME/.config/Scripts/tmux.conf'
 
 # open new term in given path (for urxvt)
-function termhere() {
-    if [ "$#" -eq 0 ]; then
-        urxvt -cd "$(pwd)" &
-    else
-        urxvt -cd "$(pwd)/$1" &
-    fi
-}
+# function termhere() {
+#     if [ "$#" -eq 0 ]; then
+#         urxvt -cd "$(pwd)" &
+#     else
+#         urxvt -cd "$(pwd)/$1" &
+#     fi
+# }
 
 # Use nvim instead of vim
 alias vim='nvim'
