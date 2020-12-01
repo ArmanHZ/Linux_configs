@@ -31,6 +31,8 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+" Scroll distance
+set scrolloff=3
 
 syntax on
 set mouse=a
