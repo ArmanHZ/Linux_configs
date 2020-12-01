@@ -21,6 +21,8 @@ _comp_options+=(globdots)
 
 # Case in-sensitive matching
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+eval "$(dircolors)"
+zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 
 # Load aliases
 source $HOME/.config/Scripts/aliasesrc
