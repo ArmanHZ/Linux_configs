@@ -20,7 +20,7 @@ compinit
 _comp_options+=(globdots)
 
 # Case in-sensitive matching
-$HOME/.config/Scripts/set_ls_colors.sh
+source $HOME/.config/Scripts/set_ls_colors.sh
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 
