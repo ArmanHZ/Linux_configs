@@ -1,4 +1,4 @@
-background_opacity: 0.95
+background_opacity: 0.98
 
 window:
   decorations: full
@@ -46,7 +46,7 @@ schemes:
       # hard constrast: background: '#1d2021'
       # medium contrast: background = '#282828'
       # soft contrast: background = '#32302f'
-      background: '#000000'
+      background: '#1d2021'
       foreground: '#ebdbb2'
   
     # Normal colors
@@ -75,7 +75,7 @@ schemes:
     
     primary:
       background: '0x282a36'
-      foreground: '0xf8f8f2'
+      foreground: '0xf2edfa'
 
     cursor:
       text: '0x44475a'
@@ -172,5 +172,5 @@ schemes:
         cyan:    '0x63f2f1'
         white:   '0xa6b3cc'
 
-colors: *gruvbox
+colors: *dracula
 
