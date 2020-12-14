@@ -8,8 +8,12 @@
 autoload -U colors && colors
 # [[ "$TERM" == "xterm" ]] && export TERM=xterm-256color
 
-PS1=%{$(tput setaf 208)%}"┌──("%{$(tput setaf 223)%}%n%{$(tput setaf 124)%}%{$(tput bold)%}"@"%{$(tput sgr0)%}%{$(tput setaf 106)%}%m%{$(tput setaf 208)%}")-["%{$(tput setaf 214)%}%~%{$(tput setaf 208)%}"]""
-└─"%{$(tput setaf 130)%}"$ "%{$reset_color%}
+# PS1=%{$(tput setaf 208)%}"┌──("%{$(tput setaf 223)%}%n%{$(tput setaf 124)%}%{$(tput bold)%}"@"%{$(tput sgr0)%}%{$(tput setaf 106)%}%m%{$(tput setaf 208)%}")-["%{$(tput setaf 214)%}%~%{$(tput setaf 208)%}"]""
+# └─"%{$(tput setaf 130)%}"$ "%{$reset_color%}
+
+NEWLINE=$'\n'
+PS1="${NEWLINE}"%{$(tput setaf 183)%}%~%{$(tput setaf 212)%}" ${NEWLINE}λ -> "%{$reset_color%}
+# preexec () { echo -ne "\e[0m" }
 
 # Basic auto/tab complete:
 zstyle ':completion:*' menu select
@@ -35,5 +39,11 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
 # Syntax highlighting plugin
-source ~/.config/zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source ~/.config/zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export PATH="$PATH:$GEM_HOME/bin"
 
