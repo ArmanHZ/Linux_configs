@@ -18,6 +18,9 @@ function mkdircd() {
 function tarr() { tar -xvf "$1"; }
 function untarr() { tar -zxvf "$1"; }
 
+# Colored grep
+alias grep='grep -n --color=auto'
+
 # tmux with config file specified
 alias tmux='tmux -f $HOME/.config/Scripts/tmux.conf'
 

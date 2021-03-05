@@ -11,7 +11,8 @@ call plug#begin('~/.config/nvim/nvim_plugins/')
     Plug 'preservim/nerdtree'
     Plug 'ycm-core/YouCompleteMe'
     Plug 'morhetz/gruvbox'
-"    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'dracula/vim', {'as': 'dracula'}
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 let &shell='/bin/zsh -i'
@@ -23,6 +24,7 @@ set wildmode=longest,list,full
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set splitbelow splitright
 set laststatus=2
+set guicursor=
 
 filetype plugin indent on
 " show existing tab with 4 spaces width
@@ -38,14 +40,15 @@ syntax on
 set mouse=a
 set t_Co=256
 
-let g:gruvbox_contrast_dark='hard'
+
+" let g:gruvbox_contrast_dark='hard'
 
 let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='base16'
+" let g:airline_theme='base16'
 
-colorscheme gruvbox
 set background=dark
+colorscheme dracula
 
 set noshowmode
 
@@ -55,6 +58,16 @@ hi Normal guibg=NONE ctermbg=NONE
 nnoremap <C-N>      :NERDTree<CR>
 
 set clipboard+=unnamedplus
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = {},  -- list of language that will be disabled
+  },
+}
+EOF
 
 " source $HOME/.config/nvim/coc_config.vim
 

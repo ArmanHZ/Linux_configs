@@ -46,4 +46,5 @@ bindkey "^[[1;5D" backward-word
 export PATH="$PATH:$HOME/.rvm/bin"
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
+export PATH="$PATH:$HOME/go/bin"
 
