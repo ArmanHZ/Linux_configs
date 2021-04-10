@@ -7,6 +7,7 @@ copy_to_scripts()
 	printf "Scripts folder exists.\nCopying aliasesrc and tmux.conf\n"
 	cp ./aliasesrc $scripts_folder
 	cp ./tmux.conf $scripts_folder
+	cp ./set_ls_colors.sh $scripts_folder
 	printf "Done!\n\n"
 }
 
