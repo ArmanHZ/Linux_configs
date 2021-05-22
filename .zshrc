@@ -12,7 +12,7 @@ autoload -U colors && colors
 # └─"%{$(tput setaf 130)%}"$ "%{$reset_color%}
 
 NEWLINE=$'\n'
-PS1="${NEWLINE}"%F{183}%~%F{212}" ${NEWLINE}λ ► "%f
+PS1="${NEWLINE}"%F{183}%~%F{212}" ${NEWLINE}λ ➤ "%f
 # preexec () { echo -ne "\e[0m" }
 
 # Basic auto/tab complete:
