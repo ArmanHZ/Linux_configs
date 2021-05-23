@@ -12,7 +12,7 @@ autoload -U colors && colors
 # └─"%{$(tput setaf 130)%}"$ "%{$reset_color%}
 
 NEWLINE=$'\n'
-PS1="${NEWLINE}"%{$(tput setaf 183)%}%~%{$(tput setaf 212)%}" ${NEWLINE}λ -> "%{$reset_color%}
+PS1="${NEWLINE}"%F{183}%~%F{212}" ${NEWLINE}λ ► "%f
 # preexec () { echo -ne "\e[0m" }
 
 # Basic auto/tab complete:
@@ -47,4 +47,5 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
