@@ -4,8 +4,8 @@ window:
   decorations: full
 
   dimensions:
-    columns: 144
-    lines: 42
+    columns: 204
+    lines: 52
 
   padding:
     x: 10

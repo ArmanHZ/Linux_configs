@@ -1,6 +1,7 @@
 scripts_folder="$HOME/.config/Scripts"
 nvim_folder="$HOME/.config/nvim"
 alacritty_folder="$HOME/.config/alacritty"
+i3_folder="$HOME/.config/i3"
 
 copy_to_scripts()
 {
@@ -23,6 +24,13 @@ alacritty_init()
 	printf "Copying alacritty files.\n"
 	cp ./alacritty.yml $alacritty_folder
 	printf "Done!\n\n"
+}
+
+i3_init()
+{
+    printf "Copying i3 config.\n"
+    cp ./i3_config $i3_folder/config
+    printf "Done!\n\n"
 }
 
 printf "Copying zshrc to home.\n"
@@ -54,5 +62,14 @@ else
 	printf "Alacritty folder does not exist. Creating it...\n"
 	mkdir -p $alacritty_folder
 	alacritty_init
+fi
+
+if [ -d "$i3_folder" ]
+then
+    i3_init
+else
+    printf "i3 folder does not exist. Creating it...\n"
+    mkdir -p $i3_folder
+    i3_init
 fi
 

@@ -12,7 +12,7 @@ autoload -U colors && colors
 # └─"%{$(tput setaf 130)%}"$ "%{$reset_color%}
 
 NEWLINE=$'\n'
-PS1="${NEWLINE}"%F{183}%~%F{212}" ${NEWLINE}λ ➤ "%f
+PS1="${NEWLINE}"%F{183}%~%F{212}" ${NEWLINE}λ ➤  "%f
 # preexec () { echo -ne "\e[0m" }
 
 # Basic auto/tab complete:
@@ -41,6 +41,11 @@ bindkey "^[[1;5D" backward-word
 # Syntax highlighting plugin
 # source ~/.config/zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Enable vi mode
+# bindkey -v
+
+# Colors for man and less
+export MANPAGER="less -R --use-color -Dd+r -Du+b"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

@@ -1,7 +1,6 @@
 # ls
 alias ls='ls --color=auto'
-alias la='ls -Al'
-alias det='ls -Alhsb'
+alias ll='ls -Al'
 
 # clear
 alias cls='clear'
@@ -18,34 +17,12 @@ function mkdircd() {
 function tarr() { tar -xvf "$1"; }
 function untarr() { tar -zxvf "$1"; }
 
-# Colored grep
+# Colored and line number grep
 alias grep='grep -n --color=auto'
 
 # tmux with config file specified
 alias tmux='tmux -f $HOME/.config/Scripts/tmux.conf'
 
-# open new term in given path (for urxvt)
-# function termhere() {
-#     if [ "$#" -eq 0 ]; then
-#         urxvt -cd "$(pwd)" &
-#     else
-#         urxvt -cd "$(pwd)/$1" &
-#     fi
-# }
-
 # Use nvim instead of vim
 alias vim='nvim'
-alias v='nvim'
-
-function appendToTop() {
-    cp "$1" _temp_ && echo -e "$2" > "$1" && cat _temp_ >> "$1" && rm -rf _temp_
-}
-
-function sea() {
-    fzf | xargs -r nvim
-}
-
-function se() {
-    find . -maxdepth 1 -not -type d | awk '{ print substr($1, 3) }' | fzf | xargs -r nvim
-}
 

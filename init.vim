@@ -11,7 +11,7 @@ call plug#begin('~/.config/nvim/nvim_plugins/')
     Plug 'preservim/nerdtree'
     Plug 'nvim-lua/completion-nvim'
     Plug 'morhetz/gruvbox'
-    " Plug 'dracula/vim', {'as': 'dracula'}
+    Plug 'dracula/vim', {'as': 'dracula'}
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'neovim/nvim-lspconfig'
 call plug#end()
@@ -43,21 +43,23 @@ set t_Co=256
 
 let NERDTreeQuitOnOpen=1
 
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_max_num_candidates = 15
+" let g:ycm_autoclose_preview_window_after_insertion = 1
+" let g:ycm_max_num_candidates = 15
 
-let g:gruvbox_contrast_dark='hard'
+" let g:gruvbox_contrast_dark='hard'
 
 let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='base16'
+" let g:airline_theme='base16'
 
 set background=dark
-colorscheme gruvbox
+let g:dracula_colorterm = 1
+let g:dracula_italic = 0
+colorscheme dracula
 
 set noshowmode
 
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 
 " Ctrl+n to open NERDTree.
 nnoremap <C-N>      :NERDTree<CR>
@@ -80,6 +82,8 @@ lua << EOF
     require'lspconfig'.clangd.setup{}
     require'lspconfig'.groovyls.setup{}
     require'lspconfig'.jsonls.setup{}
+    require'lspconfig'.phpactor.setup{}
+    require'lspconfig'.bashls.setup{}
 EOF
 
 autocmd BufEnter * lua require'completion'.on_attach()
