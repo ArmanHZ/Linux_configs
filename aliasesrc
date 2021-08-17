@@ -26,3 +26,9 @@ alias tmux='tmux -f $HOME/.config/Scripts/tmux.conf'
 # Use nvim instead of vim
 alias vim='nvim'
 
+# Colored nmap
+alias nmap='grc nmap'
+
+# Colored IP
+alias ip='ip --color=auto'
+

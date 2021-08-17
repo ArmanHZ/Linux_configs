@@ -145,6 +145,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # Class bindings
 assign [class="firefox"] 2
 assign [class="obsidian"] 5
+assign [class="VSCodium"] 4
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -197,7 +198,7 @@ client.background       #ffffff
 
 # Exec and other custom configurations
 exec "setxkbmap -layout tr"
-# exec "feh --no-fehbg --bg-scale $HOME/Pictures/0239.jpg"
+exec "feh --no-fehbg --bg-scale $HOME/Pictures/0239.jpg"
 exec "xset r rate 250 35"
 
 default_border pixel 2
