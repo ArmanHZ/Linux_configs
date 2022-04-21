@@ -10,12 +10,8 @@ alias ..='cd ..'
 
 # mkdir
 function mkdircd() {
-	mkdir -p "$1" && cd "$1"
+    mkdir -p "$1" && cd "$1"
 }
-
-# tar and untar
-function tarr() { tar -xvf "$1"; }
-function untarr() { tar -zxvf "$1"; }
 
 # Colored and line number grep
 alias grep='grep -n --color=auto'
@@ -26,9 +22,19 @@ alias tmux='tmux -f $HOME/.config/Scripts/tmux.conf'
 # Use nvim instead of vim
 alias vim='nvim'
 
-# Colored nmap
-alias nmap='grc nmap'
-
 # Colored IP
 alias ip='ip --color=auto'
 
+# fzf + vim
+alias vif() {
+    if [[ $# -gt 0 && $1 == '-h' ]]; then
+        file=$(find . 2> /dev/null | fzf)
+    else
+        file=$(fzf)
+    fi
+    if [[ $? != 0 ]]; then
+        return 0
+    else
+        vim $file
+    fi
+}
