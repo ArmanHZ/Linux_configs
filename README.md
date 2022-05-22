@@ -1,9 +1,7 @@
 # My linux configs
 
 # Installation
-Use the `update_script.sh`to automatically install or update the necessary scripts.
-
-Note: Some stuff for Vim such as Vim-Plugged and plugins require installation from Vim.
+To be updated...
 
 ### For keyboard delay rate
 ```console
