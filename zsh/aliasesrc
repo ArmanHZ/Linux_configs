@@ -25,6 +25,9 @@ alias vim='nvim'
 # Colored IP
 alias ip='ip --color=auto'
 
+# Colored diff
+alias diff='diff --color=auto'
+
 # fzf + vim
 alias vif() {
     if [[ $# -gt 0 && $1 == '-h' ]]; then
@@ -38,3 +41,4 @@ alias vif() {
         vim $file
     fi
 }
+

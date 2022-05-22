@@ -8,12 +8,12 @@
 call plug#begin('~/.config/nvim/nvim_plugins/')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'preservim/nerdtree'
-    Plug 'nvim-lua/completion-nvim'
-    Plug 'morhetz/gruvbox'
+    Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
     Plug 'dracula/vim', {'as': 'dracula'}
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'neovim/nvim-lspconfig'
+    Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+    Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 call plug#end()
 
 let &shell='/bin/zsh -i'
@@ -35,22 +35,14 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 " Scroll distance
-set scrolloff=4
+set scrolloff=7
 
 syntax on
 set mouse=a
 set t_Co=256
 
-let NERDTreeQuitOnOpen=1
-
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-" let g:ycm_max_num_candidates = 15
-
-" let g:gruvbox_contrast_dark='hard'
-
 let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_theme='base16'
 
 set background=dark
 let g:dracula_colorterm = 1
@@ -62,8 +54,20 @@ set noshowmode
 " hi Normal guibg=NONE ctermbg=NONE
 
 " Ctrl+n to open NERDTree.
-nnoremap <C-N>      :NERDTree<CR>
+nnoremap <C-N> <cmd>CHADopen<CR>
 
+" Control key to Ctrl+w (will mess with tmux).
+" nnoremap <C-b> <C-w>
+
+" Buffer movement keys.
+nnoremap <F2> <cmd>bp<cr>
+nnoremap <F3> <cmd>bn<cr>
+nnoremap <F4> <cmd>buffers<cr>
+
+" Delete is moved to null buffer. Use 'x' to cut.
+nnoremap d "_d
+
+" Copy to system clipboard
 set clipboard+=unnamedplus
 
 lua <<EOF
@@ -76,6 +80,7 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
+" Will require seperate installations. Check the LSP github page.
 lua << EOF
     require'lspconfig'.pyright.setup{}
     require'lspconfig'.tsserver.setup{}
@@ -84,16 +89,9 @@ lua << EOF
     require'lspconfig'.jsonls.setup{}
     require'lspconfig'.phpactor.setup{}
     require'lspconfig'.bashls.setup{}
+    
+    vim.g.coq_settings = {
+        auto_start = 'shut-up',
+    }
 EOF
-
-autocmd BufEnter * lua require'completion'.on_attach()
-" Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
-
-" Avoid showing message extra message when using completion
-set shortmess+=c
 
