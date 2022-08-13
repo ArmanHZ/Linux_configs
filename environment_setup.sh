@@ -51,7 +51,7 @@ function setup_i3() {
         else
             echo -r "${GREEN}'alacritty' directory exists."
         fi
-        cp ${ALACRITTY}/alacritty.yaml $HOME/.config/alacritty
+        cp ${ALACRITTY}/alacritty.yml $HOME/.config/alacritty
         echo -r "${GREEN}Copied 'alacritty' config!"
 
         if [[ ! -d "$HOME/.config/rofi" ]]; then
