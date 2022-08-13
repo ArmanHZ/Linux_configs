@@ -42,7 +42,7 @@ function setup_i3() {
             echo -r "${GREEN}'polybar' directory exists."
        fi
 
-        cp ${I3}/* $HOME/.config/polybar
+        cp ${I3}/polybar/* $HOME/.config/polybar
         echo -r "${GREEN}Copied 'polybar' config files!"
 
         if [[ ! -d "$HOME/.config/alacritty" ]]; then
