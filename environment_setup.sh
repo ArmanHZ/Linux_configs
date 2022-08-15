@@ -161,10 +161,10 @@ function setup_vim() {
 
 # Main
 echo -e "${GREEN}This is an automated script to setup i3, zsh and nvim config files.
-Some setup must be done by the user manually\n.
+Some setup must be done by the user manually.\n
     1) i3
     2) zsh
-    3) nvim${RESET}"
+    3) nvim${RESET}\n"
 
 read -p "Enter a number: " option
 echo ""
