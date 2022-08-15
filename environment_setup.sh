@@ -13,7 +13,7 @@ GREEN='\033[0;32m'
 
 # Functions
 function setup_i3() {
-    echo -e "${YELLOW}The following will be done:\n${RESET}
+    echo -e "${YELLOW}The following will be done:\n
     1) New directory '$HOME/.config/i3' will be created.
     2) New directory '$HOME/.config/polybar' will be created.
     3) New directory '$HOME/.config/alacritty' will be created.
@@ -67,7 +67,12 @@ function setup_i3() {
     fi
     
     echo -e "${BRED}NOTE: The following packages must be installed manually!\n${RESET}"
-    echo -e "${YELLOW}1) i3-gaps (or i3)\n2) polybar\n3) rofi\n4) alacritty\n5) feh\n${RESET}"
+    echo -e "${YELLOW}
+    1) i3-gaps (or i3)
+    2) polybar
+    3) rofi
+    4) alacritty
+    5) feh${RESET}"
 }
 
 function setup_zsh() {
@@ -95,7 +100,11 @@ function setup_zsh() {
     fi
 
     echo -e "${BRED}NOTE: The following packages must be installed manually!\n${RESET}"
-    echo -e "${YELLOW}1) zsh\n2) tmux\n3) (optional) fzf\n4) (optional) new version of 'less'${RESET}"
+    echo -e "${YELLOW}
+    1) zsh
+    2) tmux
+    3) (optional) fzf
+    4) (optional) new version of 'less'${RESET}"
     echo -e "${YELLOW}Optional ones are used in the 'aliasesrc'.\n${RESET}"
 }
 
@@ -139,15 +148,23 @@ function setup_vim() {
         fi
 
         echo -e "${BRED}NOTE: The following packets must be installed manually!\n${RESET}"
-        echo -e "${YELLOW}1) nvim later than 0.5.0\n2) Latest lua\n3) PlugInstall inside nvim\n4) LSPs according to 'https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md'\n5) xclipboard\n6) 'Nerd Fonts' Cascadia Code icon extension pack${RESET}"
+        echo -e "${YELLOW}
+        1) nvim later than 0.5.0
+        2) Latest lua
+        3) PlugInstall inside nvim
+        4) LSPs according to 'https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md'
+        5) xclipboard
+        6) 'Nerd Fonts' Cascadia Code icon extension pack${RESET}"
     fi
 }
 
 
 # Main
 echo -e "${GREEN}This is an automated script to setup i3, zsh and nvim config files.
-Some setup must be done by the user manually.
-1) i3\n2) zsh\n3) nvim\n${RESET}"
+Some setup must be done by the user manually\n.
+    1) i3
+    2) zsh
+    3) nvim${RESET}"
 
 read -p "Enter a number: " option
 echo ""
