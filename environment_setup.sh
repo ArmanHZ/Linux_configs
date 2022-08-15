@@ -66,7 +66,7 @@ function setup_i3() {
         echo -r "${GREEN}Done!\n${RESET}"
     fi
     
-    echo -e "${BRED}NOTE: The following packages must be installed manually!\n${RESET}"
+    echo -e "${BRED}NOTE: The following packages must be installed manually!${RESET}"
     echo -e "${YELLOW}
     1) i3-gaps (or i3)
     2) polybar
@@ -99,7 +99,7 @@ function setup_zsh() {
         echo -e "${GREEN}Done!\n${RESET}"
     fi
 
-    echo -e "${BRED}NOTE: The following packages must be installed manually!\n${RESET}"
+    echo -e "${BRED}NOTE: The following packages must be installed manually!${RESET}"
     echo -e "${YELLOW}
     1) zsh
     2) tmux
@@ -147,7 +147,7 @@ function setup_vim() {
             fi
         fi
 
-        echo -e "${BRED}NOTE: The following packets must be installed manually!\n${RESET}"
+        echo -e "${BRED}NOTE: The following packets must be installed manually!${RESET}"
         echo -e "${YELLOW}
         1) nvim later than 0.5.0
         2) Latest lua
