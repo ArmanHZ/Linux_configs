@@ -29,7 +29,7 @@ alias ip='ip --color=auto'
 alias diff='diff --color=auto'
 
 # fzf + vim
-alias vif() {
+vif() {
     if [[ $# -gt 0 && $1 == '-h' ]]; then
         file=$(find . 2> /dev/null | fzf)
     else
