@@ -1,3 +1,5 @@
+**Note: This is slightly outdated. I am working on a newer version, which simplifies a lot of steps.**
+
 # My linux configs
 These are the config files I use for my minimal Arch Linux setup. This setup is mostly used as a VM for penetration testing.
 However, I share these config files for friends and others to use or get inspired by them.
