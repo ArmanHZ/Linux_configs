@@ -1,0 +1,45 @@
+# ls
+alias ls='ls --color=auto'
+alias ll='ls -Al'
+
+# clear
+alias cls='clear'
+
+# cd
+alias ..='cd ..'
+
+# mkdir
+function mkdircd() {
+    mkdir -p "$1" && cd "$1"
+}
+
+# Colored and line number grep
+alias grep='grep -n --color=auto'
+
+# tmux with config file specified
+alias tmux='tmux -f $HOME/.config/Scripts/tmux.conf'
+
+# Use nvim instead of vim
+alias vim='nvim'
+
+# Colored IP
+alias ip='ip --color=auto'
+
+# Colored diff
+alias diff='diff --color=auto'
+
+# fzf + vim
+vif() {
+    # -h flag to search files in your current directory
+    if [[ $# -gt 0 && $1 == '-h' ]]; then
+        file=$(find . 2> /dev/null | fzf)
+    else
+        file=$(fzf)
+    fi
+    if [[ $? != 0 ]]; then
+        return 0
+    else
+        vim $file
+    fi
+}
+

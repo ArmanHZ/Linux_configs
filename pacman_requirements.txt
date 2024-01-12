@@ -1,0 +1,8 @@
+alacritty
+ttf-cascadia-code
+neovim
+i3-wm
+polybar
+zsh
+rofi
+lua
